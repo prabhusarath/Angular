@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WarningAlertComponent } from './warning-alert.component';
+import { ServerEleComponent } from './server-ele.component';
 
-describe('WarningAlertComponent', () => {
-  let component: WarningAlertComponent;
-  let fixture: ComponentFixture<WarningAlertComponent>;
+describe('ServerEleComponent', () => {
+  let component: ServerEleComponent;
+  let fixture: ComponentFixture<ServerEleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WarningAlertComponent ]
+      declarations: [ ServerEleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WarningAlertComponent);
+    fixture = TestBed.createComponent(ServerEleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

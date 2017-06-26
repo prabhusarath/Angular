@@ -7,6 +7,8 @@ import { WebAppComponent } from './webapp/webapp.component';
 import { ClientsComponent } from './clients/clients.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { ControlComponent } from './control/control.component';
+import { ServerEleComponent } from './server-ele/server-ele.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
     WebAppComponent,
     ClientsComponent,
     WarningAlertComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    ControlComponent,
+    ServerEleComponent
   ],
   imports: [
     BrowserModule,
