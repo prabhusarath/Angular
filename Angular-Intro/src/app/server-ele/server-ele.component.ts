@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-server-ele',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server-ele.component.css']
 })
 export class ServerEleComponent implements OnInit {
+
+  @Input() element: {type: string, name: string, content: string};
 
   constructor() { }
 
