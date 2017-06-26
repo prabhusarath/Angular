@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlComponent implements OnInit {
 
+  @Output() ServerCreate = new EventEmitter<{ newServerName: string, newServerContent: string}>();
+  @Output() BlueprintCreate = new EventEmitter<{ newServerName: string, newServerContent: string}>();
 
   newServerName = '';
   newServerContent = '';
@@ -17,22 +19,17 @@ export class ControlComponent implements OnInit {
   }
 
   onAddServer() {
-    // this.serverElemnts.push({
-    //   type: 'server',
-    //   name: this.newServerName,
-    //   content: this.newServerContent
-    // });
+    this.ServerCreate.emit({
+      newServerName: this.newServerName,
+      newServerContent: this.newServerContent
+    });
   }
 
   onAddBlueprint() {
-    // this.serverElemnts.push({
-    //   type: 'Blueprint',
-    //   name: this.newServerName,
-    //   content: this.newServerContent
-    // });
+    this.BlueprintCreate.emit({
+      newServerName: this.newServerName,
+      newServerContent: this.newServerContent
+    });
   }
-
-
-
 
 }

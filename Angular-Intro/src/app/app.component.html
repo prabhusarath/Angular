@@ -1,9 +1,12 @@
 <div class="container">
-  <app-control></app-control>
+  <app-control (ServerCreate)="onAddServer($event)"
+               (BlueprintCreate)="onAddBlueprint($event)"
+  ></app-control>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-ele *ngFor="let serv of serverElements"></app-server-ele>
+      <app-server-ele *ngFor="let serv of serverElements"
+      [element]="serv"></app-server-ele>
     </div>
   </div>
 </div>
