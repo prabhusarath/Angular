@@ -1,13 +1,17 @@
 <div class="row">
   <div class="col-md-5">
-  <app-recipe-list>
-
-  </app-recipe-list>
-
+  <app-recipe-list
+  (debugEmitter)=" displayData = $event"></app-recipe-list>
   </div>
   <div class="col-md-7">
-  <app-recipe-detail>
 
-  </app-recipe-detail>
+  <app-recipe-detail
+  *ngIf="displayData; else infos"
+  [finalsData] = "displayData"></app-recipe-detail>
+
+    <ng-template #infos>
+    <p> NG Template </p>
+    </ng-template>
+
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Recipes } from '../recipe.model'
 
 
@@ -8,6 +8,9 @@ import { Recipes } from '../recipe.model'
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+
+  @Output() debugEmitter = new EventEmitter<Recipes>();
+
   recipes: Recipes[] = [
     new Recipes('Test Recpie', 'Tested', 'https://c1.staticflickr.com/4/3624/3717666449_d546391954_b.jpg'),
     new Recipes('Biriryani Recpie', 'Tested', 'https://c1.staticflickr.com/4/3624/3717666449_d546391954_b.jpg'),
@@ -17,6 +20,10 @@ export class RecipeListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onRecpclicked(recli: Recipes){
+    this.debugEmitter.emit(recli);
   }
 
 }
