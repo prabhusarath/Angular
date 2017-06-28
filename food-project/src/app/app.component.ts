@@ -10,6 +10,5 @@ export class AppComponent {
 
   onSelection( feats: string ) {
     this.loadedOption = feats;
-    console.log(this.loadedOption);
   }
 }

@@ -18,8 +18,8 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddItems(){
-    const itemsAdded = new Items(this.nameelement.nativeElement.value, this.amountelement.nativeElement.value)
+  onAddItems() {
+    const itemsAdded = new Items(this.nameelement.nativeElement.value, this.amountelement.nativeElement.value);
     this.IngredientsAdded.emit(itemsAdded);
   }
 
