@@ -1,6 +1,6 @@
 <!--The whole content below can be removed with the new code.-->
 
-<app-headerdata (optionsSelected)="onSelection($event)">
+<app-headerdata (sel)="onSelection($event)">
 
 </app-headerdata>
 
@@ -10,7 +10,7 @@
 
       <app-recipe *ngIf=" loadedOption === 'Recipes'"></app-recipe>
 
-      <app-shopping *ngIf=" loadedOption !== 'Shopping-Lists'"> </app-shopping>
+      <app-shopping *ngIf=" loadedOption !== 'Recipes'"> </app-shopping>
 
     </div>
   </div>

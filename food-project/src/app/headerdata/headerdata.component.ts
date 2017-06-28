@@ -9,5 +9,6 @@ export class HeaderComponent {
 
   onSelect( optiond: string ) {
     this.sel.emit(optiond);
+    console.log(optiond);
   }
 }
