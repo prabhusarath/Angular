@@ -1,7 +1,7 @@
 import {Directive, ElementRef, OnInit} from "@angular/core";
 
 @Directive ({
-  selector: '[customDir]'
+  selector: '[appCustomDir]'
 })
 export class CustomdirDirective implements OnInit {
   constructor( private refs: ElementRef) {
