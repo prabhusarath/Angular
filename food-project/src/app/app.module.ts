@@ -11,6 +11,9 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.component';
 import {FlowdownDirective} from './Shared/flowdown.directive';
 import {ShoppingService} from './shopping/shopping.service';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {ShoppingService} from './shopping/shopping.service';
     FlowdownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [ShoppingService],
   bootstrap: [AppComponent]
