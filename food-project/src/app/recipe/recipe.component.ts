@@ -12,9 +12,14 @@ export class RecipeComponent implements OnInit {
 
   displayData: Recipes;
 
-  constructor() { }
+  constructor(private recpServ: RecipeService) { }
 
   ngOnInit() {
+    this.recpServ.recipeSelc
+      .subscribe(
+        (rec: Recipes) => {
+        this.displayData = rec;
+    }
+    );
   }
-
 }
