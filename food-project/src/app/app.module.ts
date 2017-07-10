@@ -14,6 +14,7 @@ import {ShoppingService} from './shopping/shopping.service';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
+import { RecipeIntroComponent } from './recipe/recipe-intro/recipe-intro.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {AppRoutingModule} from './app-routing.module';
     RecipeItemComponent,
     ShoppingComponent,
     ShoppingEditComponent,
-    FlowdownDirective
+    FlowdownDirective,
+    RecipeIntroComponent
   ],
   imports: [
     BrowserModule,

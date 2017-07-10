@@ -6,15 +6,15 @@
 
     <div class="navbar-default">
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)=" onSelect('Recipes') ">Recipes</a></li>
-        <li><a href="#" (click)=" onSelect('Shopping-Lists') ">Shopping-Lists</a></li>
+        <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
+        <li routerLinkActive="active"><a routerLink="/shopping">Shopping-Lists</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appFlowdown>
-          <a href="#" class="dropdown-toggle" role="link">Manage<span class="caret"></span></a>
+          <a style="cursor: pointer;" class="dropdown-toggle" role="link">Manage<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Save Recipe Data</a></li>
-            <li><a href="#">Fetch Recipe Data</a></li>
+            <li><a style="cursor: pointer;">Save Recipe Data</a></li>
+            <li><a style="cursor: pointer;">Fetch Recipe Data</a></li>
           </ul>
         </li>
       </ul>

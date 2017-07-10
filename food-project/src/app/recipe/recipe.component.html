@@ -4,13 +4,9 @@
   </div>
   <div class="col-md-7">
 
-  <app-recipe-detail
-  *ngIf="displayData; else infos"
-  [finalsData] = "displayData"></app-recipe-detail>
+  <router-outlet>
 
-    <ng-template #infos>
-    <p> NG Template </p>
-    </ng-template>
+  </router-outlet>
 
   </div>
 </div>

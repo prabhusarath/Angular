@@ -8,9 +8,10 @@
   <div class="row">
     <div class="col-md-12">
 
-      <app-recipe *ngIf=" loadedOption === 'Recipes'"></app-recipe>
+      <router-outlet>
 
-      <app-shopping *ngIf=" loadedOption !== 'Recipes'"> </app-shopping>
+
+      </router-outlet>
 
     </div>
   </div>
