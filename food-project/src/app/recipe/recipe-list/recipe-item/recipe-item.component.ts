@@ -11,15 +11,11 @@ import {RecipeService} from '../../recipe.service';
 export class RecipeItemComponent implements OnInit {
 
   @Input() recpos: Recipes;
+  @Input() ix: number;
 
   constructor(private recService: RecipeService) {
   }
 
   ngOnInit() {
   }
-
-  onSelfunc(){
-    this.recService.recipeSelc.emit(this.recpos);
-  }
-
 }

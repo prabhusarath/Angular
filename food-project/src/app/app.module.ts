@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 import { RecipeIntroComponent } from './recipe/recipe-intro/recipe-intro.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RecipeIntroComponent } from './recipe/recipe-intro/recipe-intro.compone
     ShoppingComponent,
     ShoppingEditComponent,
     FlowdownDirective,
-    RecipeIntroComponent
+    RecipeIntroComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
