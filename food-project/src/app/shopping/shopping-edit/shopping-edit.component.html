@@ -27,8 +27,11 @@
       <div>
         <div class="col-xs-12">
           <button class="btn btn-success" type="submit" [disabled]="!f.valid"> {{ edits ? 'Update ' : 'Add'}}</button>
-          <button class="btn btn-danger" type="button">Edit</button>
-          <button class="btn btn-primary" type="button">Clear</button>
+          <button class="btn btn-danger"
+                  type="button"
+                  (click)="onDelete()"
+                  *ngIf="edits">Delete</button>
+          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>
     </form>

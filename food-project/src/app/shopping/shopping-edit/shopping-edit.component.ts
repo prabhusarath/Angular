@@ -26,7 +26,6 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
         (index: number) => {
           this.editsIndex = index;
           this.edits = true;
-          console.log(this.edits + ' Condition' );
           this.editItem = this.Serv.getIngindexs(index);
           this.SlForm.setValue({
             name: this.editItem.name,
@@ -36,9 +35,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       );
   }
 
-  ngOnDestroy() {
-    this.subsc.unsubscribe();
-  }
+
 
   addItemsCheck(newforms: NgForm ) {
     const val = newforms.value;
@@ -48,7 +45,24 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.Serv.addIngredients(itemsAdded);
     }
+    this.edits = false;
+  newforms.reset();
   }
+
+  onClear() {
+    this.SlForm.reset();
+    this.edits = false;
+  }
+
+  onDelete() {
+    this.Serv.delIngreds(this.editsIndex);
+    this.onClear();
+  }
+
+  ngOnDestroy() {
+    this.subsc.unsubscribe();
+  }
+
 }
 
 

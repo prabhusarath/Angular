@@ -13,8 +13,8 @@
         <li class="dropdown" appFlowdown>
           <a style="cursor: pointer;" class="dropdown-toggle" role="link">Manage<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a style="cursor: pointer;">Save Recipe Data</a></li>
-            <li><a style="cursor: pointer;">Fetch Recipe Data</a></li>
+            <li><a style="cursor: pointer;" (click)="onSaveData()">Save Recipe Data</a></li>
+            <li><a style="cursor: pointer;" (click)="onFetchData()">Fetch Recipe Data</a></li>
           </ul>
         </li>
       </ul>

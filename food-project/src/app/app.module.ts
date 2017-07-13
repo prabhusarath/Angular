@@ -11,11 +11,13 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.component';
 import {FlowdownDirective} from './Shared/flowdown.directive';
 import {ShoppingService} from './shopping/shopping.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 import { RecipeIntroComponent } from './recipe/recipe-intro/recipe-intro.component';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import {RecipeService} from './recipe/recipe.service';
+import {DataDbService} from './Shared/data.db.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,11 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingService],
+  providers: [ShoppingService, RecipeService, DataDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
