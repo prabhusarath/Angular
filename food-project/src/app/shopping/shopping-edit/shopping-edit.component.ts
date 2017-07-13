@@ -11,7 +11,7 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
 
-  @ViewChild('f') RefForm: NgForm;
+  @ViewChild('f') SlForm: NgForm;
 
   subsc: Subscription;
   edits = false;
@@ -26,10 +26,12 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
         (index: number) => {
           this.editsIndex = index;
           this.edits = true;
+          console.log(this.edits + ' Condition' );
           this.editItem = this.Serv.getIngindexs(index);
-          this.RefForm.setValue({
+          this.SlForm.setValue({
             name: this.editItem.name,
-            amount: this.editItem.quantity })
+            quantity: this.editItem.quantity
+          })
         }
       );
   }
@@ -38,13 +40,16 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.subsc.unsubscribe();
   }
 
-  onAddItems(form: NgForm ) {
-    const value = form.value;
-    const itemsAdded = new Items(value.name, value.amount);
-    if(this.edits){
+  addItemsCheck(newforms: NgForm ) {
+    const val = newforms.value;
+    const itemsAdded = new Items( val.name, val.quantity);
+  if (this.edits) {
       this.Serv.updates(this.editsIndex, itemsAdded );
-    }else {
+    } else {
       this.Serv.addIngredients(itemsAdded);
     }
   }
 }
+
+
+

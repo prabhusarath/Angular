@@ -10,6 +10,7 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./shopping.component.css']
 })
 export class ShoppingComponent implements OnInit, OnDestroy {
+
   ingredients: Items[];
   private subs: Subscription;
 
@@ -19,14 +20,14 @@ export class ShoppingComponent implements OnInit, OnDestroy {
     this.ingredients = this.shopserv.getIngreds();
     this.subs = this.shopserv.ingrchanged.
     subscribe(
-      (ingredients: Items[]) => {
-        this.ingredients = ingredients;
+      (greds: Items[]) => {
+        this.ingredients = greds;
       }
     );
   }
 
-  onEditItem(index: number) {
-    this.shopserv.editchanged.next(index);
+  onEditItem(ins: number) {
+    this.shopserv.editchanged.next(ins);
   }
 
 

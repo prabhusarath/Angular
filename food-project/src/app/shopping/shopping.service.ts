@@ -7,8 +7,10 @@ export class ShoppingService {
   editchanged = new Subject<number>();
 
   private ingredients: Items[] = [
-  new Items( 'Tomato', 10),
-  new Items( 'Onions', 5)
+    new Items( 'Tomato', 10),
+    new Items( 'Onions', 5),
+    new Items( 'Bread', 2),
+    new Items( 'Eggs', 1)
 ];
 
   getIngreds() {
