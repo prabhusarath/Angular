@@ -10,7 +10,19 @@
         <li routerLinkActive="active"><a routerLink="/shopping">Shopping-Lists</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" appFlowdown>
+
+        <ng-template [ngIf]="!authServ.isAuths()">
+          <li><a routerLink="/signup">Register</a></li>
+          <li><a routerLink="/signin">Sign In</a></li>
+        </ng-template>
+
+        <li><a style="cursor: pointer;"
+               (click)="onLogout()"
+               *ngIf="authServ.isAuths()">Logout</a> </li>
+
+        <li class="dropdown"
+            appDropdown
+            *ngIf="authServ.isAuths()">
           <a style="cursor: pointer;" class="dropdown-toggle" role="link">Manage<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a style="cursor: pointer;" (click)="onSaveData()">Save Recipe Data</a></li>

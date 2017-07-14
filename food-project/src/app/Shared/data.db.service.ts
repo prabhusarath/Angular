@@ -3,19 +3,23 @@ import {Http, Response} from "@angular/http";
 import {RecipeService} from "../recipe/recipe.service";
 import {Recipes} from "../recipe/recipe.model";
 import 'rxjs/add/operator/map';
+import {AuthService} from "../userauth/auth.service";
 
 
 @Injectable()
 export class DataDbService {
-  constructor(private http: Http, private recpServ: RecipeService) {
+  constructor(private http: Http, private recpServ: RecipeService, private authServ: AuthService) {
   }
 
   storeRecipes() {
-    return this.http.put('https://ng-food-journal.firebaseio.com/recipes.json', this.recpServ.getRecipes());
+    const toks = this.authServ.getTok();
+    return this.http.put('https://ng-food-journal.firebaseio.com/recipes.json?auth=' + toks, this.recpServ.getRecipes());
   }
 
   fetchRecipes() {
-    this.http.get('https://ng-food-journal.firebaseio.com/recipes.json')
+    const toks = this.authServ.getTok();
+
+    this.http.get('https://ng-food-journal.firebaseio.com/recipes.json?auth=' + toks)
       .map(
         (response: Response) => {
           const recp: Recipes[] = response.json();

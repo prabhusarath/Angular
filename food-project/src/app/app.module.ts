@@ -18,6 +18,10 @@ import { RecipeIntroComponent } from './recipe/recipe-intro/recipe-intro.compone
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 import {RecipeService} from './recipe/recipe.service';
 import {DataDbService} from './Shared/data.db.service';
+import { SignupComponent } from './userauth/signup/signup.component';
+import { SigninComponent } from './userauth/signin/signin.component';
+import {AuthService} from './userauth/auth.service';
+import {AuthProtect} from './userauth/auth-protect.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import {DataDbService} from './Shared/data.db.service';
     ShoppingEditComponent,
     FlowdownDirective,
     RecipeIntroComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,7 @@ import {DataDbService} from './Shared/data.db.service';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingService, RecipeService, DataDbService],
+  providers: [ShoppingService, RecipeService, DataDbService, AuthService, AuthProtect],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
