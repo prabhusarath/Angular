@@ -10,30 +10,40 @@ export class RecipeService {
   recipechanged = new Subject<Recipes[]>();
 
   private repes: Recipes[] = [
-    new Recipes('Test Recipe',
-      'Tested',
-      'https://c1.staticflickr.com/4/3624/3717666449_d546391954_b.jpg',
+    new Recipes('Sambar',
+      'Lentil soup cooked with vegetables and a blend of south Indian spices (masala). Usually taken with rice, idli, dosa, pongal or upma.',
+      'https://upload.wikimedia.org/wikipedia/commons/7/7e/Sambaar_kadamba.jpg',
       [
-        new Items( 'Tomato', 10),
-        new Items( 'Onions', 5)
+        new Items( 'Lentils', 2),
+        new Items( 'Onions', 2),
+        new Items( 'Tomato', 2),
+        new Items( 'Dal', 2)
       ]
     ),
-    new Recipes('Test Recipe',
-      'Tested',
-      'https://c1.staticflickr.com/4/3624/3717666449_d546391954_b.jpg',
+    new Recipes('Aloo shimla mirch',
+      'Green capsicum with potatoes sauted with cumin seeds, onions, tomatoes, ginger-garlic paste, turmeric, red chilli powder and garam masala',
+      'https://upload.wikimedia.org/wikipedia/commons/b/b0/Spicy_alloo_with_tadka_mirchi.jpg',
       [
-        new Items( 'meat', 10),
-        new Items( 'Pork', 5)
+        new Items( 'Aloo', 10),
+        new Items( 'capsicum', 5)
       ]
     ),
-    new Recipes('Test Recipe',
-      'Tested',
-      'https://c1.staticflickr.com/4/3624/3717666449_d546391954_b.jpg',
+    new Recipes('Biryani',
+      'Main or side dish. Mixed rice dish, optional spices, optional vegetables, meats or seafood. Can be served with plain yogurt.',
+      'https://upload.wikimedia.org/wikipedia/commons/e/ea/Pulao-indian-rice-4.jpg',
       [
-        new Items( 'Milk', 10),
-        new Items( 'Honey', 5)
+        new Items( 'Meat', 10),
+        new Items( 'Rice', 5)
+      ]
+    ),
+    new Recipes('Jalebi',
+      'A North Indian twisted noodle like sweet dish dipped in sugary syrup',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/JalebiIndia.jpg/800px-JalebiIndia.jpg',
+      [
+        new Items( 'Sugar', 10)
       ]
     )
+
   ];
 
   constructor(private Shops: ShoppingService){
