@@ -1,0 +1,54 @@
+
+<form class="well well-lg">
+
+    <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add New Movies...">
+
+    <hr>
+    <div class="wrapper">
+      <input type="button" (click)="addMovies($event)" value="Save" class="btn btn-success btn-lg">
+    </div>
+</form>
+<br>
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div *ngFor="let movies of tasks" class="box">
+
+            <div class="icon">
+              <div  class="info">
+
+                <p>
+                  <label>
+                    <input type="radio" [checked]="movies.status === 'Notstarted'" name={{movies.title}} value="Notstarted" (click)="updatedoneStatus(movies,$event)"> Notstarted
+                  </label>
+                  <label>
+                    <input type="radio" [checked]="movies.status === 'InProgress'" name={{movies.title}} value="InProgress" (click)="updatedoneStatus(movies,$event)"> InProgress
+                  </label>
+                  <label >
+                    <input type="radio" [checked]="movies.status === 'Completed'" name={{movies.title}} value="Completed" (click)="updatedoneStatus(movies,$event)"> Completed
+                  </label>
+                </p>
+
+                  <label> <h4> {{movies.title}} </h4> </label>
+                 <br>
+
+                <input type="button" (click)="deleteMovie(movies._id)" value="Delete" class="btn btn-danger">
+
+              </div>
+            </div>
+
+        <br>
+
+        <div class="space"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+

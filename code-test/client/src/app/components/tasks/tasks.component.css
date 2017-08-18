@@ -1,0 +1,17 @@
+.container{
+  background-color: #FFFFFF;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+}
+
+.box > .icon { text-align: center; position: relative; background-color: #87CEFA;}
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 80px; height: 80px; border: 20px solid #FFFFFF; line-height: 88px; border-radius: 50%; background: #6545ff; vertical-align: middle; }
+.box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #040002; padding: 15px 0 10px 0; }
+.box .space { height: 25px;}
